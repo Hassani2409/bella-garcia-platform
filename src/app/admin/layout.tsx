@@ -16,13 +16,13 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
-  // Demo mode - no authentication required
+  // Public demo - no authentication required
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Demo Notice */}
-      <div className="bg-amber-100 border-b border-amber-200 px-4 py-2 text-center">
-        <p className="text-amber-800 text-sm">
-          🎭 <strong>Demo Mode</strong> - Bella Garcia Platform Admin Dashboard
+      <div className="bg-gradient-to-r from-amber-500 to-orange-600 text-white px-4 py-3 text-center">
+        <p className="text-sm font-medium">
+          🎭 <strong>DEMO</strong> - Bella Garcia Platform Admin Dashboard - Öffentlich zugänglich für Vorschau
         </p>
       </div>
 
