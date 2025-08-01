@@ -16,15 +16,23 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Demo mode - no authentication required
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Demo Notice */}
+      <div className="bg-amber-100 border-b border-amber-200 px-4 py-2 text-center">
+        <p className="text-amber-800 text-sm">
+          🎭 <strong>Demo Mode</strong> - Bella Garcia Platform Admin Dashboard
+        </p>
+      </div>
+
       {/* Admin Header */}
       <AdminHeader />
-      
+
       <div className="flex">
         {/* Sidebar */}
         <AdminSidebar />
-        
+
         {/* Main Content */}
         <main className="flex-1 ml-64 p-8">
           <div className="max-w-7xl mx-auto">
