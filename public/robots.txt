@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Public demo - main site is accessible
+Sitemap: https://your-domain.vercel.app/sitemap.xml
