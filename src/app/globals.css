@@ -1,15 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* Custom CSS for Bella Garcia Platform */
+
+/* African-inspired color variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --african-gold: #D4AF37;
+  --african-terracotta: #C65D07;
+  --african-deep-red: #8B0000;
+  --african-earth: #8B4513;
+  --african-sunset: #FF6B35;
+  --berlin-steel: #2D3748;
+  --berlin-concrete: #E2E8F0;
+  --accent-warm: #F7931E;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+/* African pattern background */
+.african-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--african-gold) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, var(--african-terracotta) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+}
+
+/* Gradient backgrounds */
+.gradient-african {
+  background: linear-gradient(135deg, var(--african-sunset) 0%, var(--african-terracotta) 50%, var(--african-deep-red) 100%);
+}
+
+.gradient-berlin {
+  background: linear-gradient(135deg, var(--berlin-steel) 0%, #4A5568 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, var(--accent-warm) 0%, var(--african-gold) 100%);
+}
+
+/* Custom button styles */
+.btn-african {
+  background: linear-gradient(to right, rgb(245 158 11), rgb(249 115 22));
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.btn-african:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: scale(1.05);
+}
+
+.btn-berlin {
+  background-color: rgb(31 41 55);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgb(31 41 55);
+  transition: all 0.3s;
+}
+
+.btn-berlin:hover {
+  background-color: transparent;
+  color: rgb(31 41 55);
+}
+
+/* Card styles */
+.card-african {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgb(252 211 77);
+  transition: all 0.3s;
+}
+
+.card-african:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.card-service {
+  background: linear-gradient(to bottom right, white, rgb(255 251 235));
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.card-service:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.5rem);
+}
+
+/* Text styles */
+.text-african-gold {
+  color: var(--african-gold);
+}
+
+.text-african-terracotta {
+  color: var(--african-terracotta);
+}
+
+.text-berlin-steel {
+  color: var(--berlin-steel);
+}
+
+/* Hero section specific styles */
+.hero-overlay {
+  background: linear-gradient(
+    45deg,
+    rgba(212, 175, 55, 0.9) 0%,
+    rgba(198, 93, 7, 0.8) 50%,
+    rgba(139, 0, 0, 0.9) 100%
+  );
+}
+
+/* Animation classes */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Pulse animation for CTA buttons */
+.pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+  }
+}
+
+/* Mobile-first responsive utilities */
+.container-mobile {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .container-mobile {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-mobile {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Service category colors */
+.category-choreography {
+  border-left: 4px solid rgb(234 179 8);
+  background-color: rgb(254 249 195);
+}
+
+.category-stunts {
+  border-left: 4px solid rgb(220 38 38);
+  background-color: rgb(254 226 226);
+}
+
+.category-one1vibe {
+  border-left: 4px solid rgb(147 51 234);
+  background-color: rgb(243 232 255);
+}
+
+.category-momflow {
+  border-left: 4px solid rgb(236 72 153);
+  background-color: rgb(253 242 248);
+}
+
+.category-afro-fusion {
+  border-left: 4px solid rgb(22 163 74);
+  background-color: rgb(220 252 231);
+}
+
+.category-workshops {
+  border-left: 4px solid rgb(37 99 235);
+  background-color: rgb(219 234 254);
+}
+
+/* Video overlay styles */
+.video-overlay {
+  position: relative;
+}
+
+.video-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.video-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--african-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--african-terracotta);
 }
 
 @media (prefers-color-scheme: dark) {
